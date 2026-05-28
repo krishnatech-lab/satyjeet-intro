@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Satyjeet Kumar | MBBS, MD Doctor & Medical Educator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d9488', // Teal-600 (Medical vibes)
+                        secondary: '#4f46e5', // Indigo-600
+                        darkBg: '#0f172a', // Slate-900
+                        cardBg: '#1e293b' // Slate-800
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+        }
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+            border: 2px solid #0d9488;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+    </style>
+</head>
+<body class="text-slate-100 overflow-x-hidden">
+
+    <!-- Navbar Section -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
+                    O
+                </div>
+                <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-slate-200 to-teal-400 bg-clip-text text-transparent">Own Website</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">Skills</a>
+                <a href="#achievements" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">Achievements</a>
+                <a href="#courses" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">Courses</a>
+                <a href="#contact" class="text-slate-300 hover:text-white hover:border-b-2 hover:border-primary pb-1 transition-all">Contact</a>
+            </nav>
+
+            <!-- CTA Desktop Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-teal-500/20">
+                    Get In Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-slate-300 focus:outline-none focus:text-white" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0f172a] border-b border-slate-800 transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-3 flex flex-col items-start">
+                <a href="#home" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg border-b border-slate-800/50">Home</a>
+                <a href="#about" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg border-b border-slate-800/50">About</a>
+                <a href="#skills" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg border-b border-slate-800/50">Skills</a>
+                <a href="#achievements" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg border-b border-slate-800/50">Achievements</a>
+                <a href="#courses" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg border-b border-slate-800/50">Courses</a>
+                <a href="#contact" class="mobile-link text-slate-300 hover:text-white py-2 w-full text-left text-lg">Contact</a>
+                <a href="#contact" class="mobile-link w-full text-center py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold mt-4">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Gradients -->
+        <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-primary/15 rounded-full filter blur-[100px] pointer-events-none animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-secondary/15 rounded-full filter blur-[100px] pointer-events-none animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/50 text-xs sm:text-sm text-teal-300">
+                    <span class="flex h-2.5 w-2.5 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-500"></span>
+                    </span>
+                    <span>Distinguished Clinical Practice & Education</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
+                    Hello, I'm <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-teal-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Dr. Satyjeet Kumar</span>
+                </h1>
+                
+                <p class="text-xl sm:text-2xl font-semibold text-slate-300 flex items-center justify-center lg:justify-start gap-2">
+                    <i class="fa-solid fa-user-doctor text-teal-400"></i>
+                    <span>MBBS, MD Doctor | Educator | Consultant</span>
+                </p>
+                
+                <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    A highly dedicated medical professional holding <strong>MBBS</strong> and <strong>MD</strong> degrees. Over the past decade, I have integrated clinical excellence with dynamic digital health education, establishing trusted academic portals and empowering thousands of global learners.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#contact" class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-lg hover:shadow-teal-500/30 transition-all text-center flex items-center justify-center space-x-2 group">
+                        <span>Consult & Get In Touch</span>
+                        <i class="fa-solid fa-stethoscope group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="#skills" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 font-bold text-center transition-all flex items-center justify-center space-x-2 text-slate-200">
+                        <i class="fa-solid fa-clipboard-list text-teal-400"></i>
+                        <span>Medical Expertise</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image Visuals (Referencing IMG_20260528_084019.jpg verbatim) -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm sm:max-w-md bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-3xl p-1 shadow-2xl shadow-teal-500/15 group">
+                    <div class="w-full h-full bg-[#131b2e] rounded-[22px] overflow-hidden relative flex flex-col">
+                        <!-- Upper Badge Overlays -->
+                        <div class="absolute top-4 left-4 z-20 bg-teal-500/95 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>MBBS, MD Qualified</span>
+                        </div>
+                        <div class="absolute top-4 right-4 z-20 bg-amber-500/95 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-star"></i>
+                            <span>20+ Online Courses</span>
+                        </div>
+
+                        <!-- Image Container -->
+                        <div class="relative w-full aspect-[4/5] bg-slate-900 overflow-hidden">
+                            <!-- Image fallback handled gracefully -->
+                            <img 
+                                src="IMG_20260528_084019.jpg" 
+                                alt="Dr. Satyjeet Kumar - MBBS, MD Doctor" 
+                                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/131b2e/ffffff?text=Dr.+Satyjeet+Kumar'"
+                            />
+                        </div>
+
+                        <!-- Card Caption Info -->
+                        <div class="p-6 bg-[#0f172a] border-t border-slate-800/80">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-bold text-white">Dr. Satyjeet Kumar</h4>
+                                <span class="text-xs text-teal-400 font-semibold tracking-wider uppercase">Lead Director</span>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Medical Officer practicing in India, providing dedicated healthcare counseling & medical content writing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#090d16] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Side: Interactive Quick Stats Grid -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6 order-2 lg:order-1">
+                    <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/40 hover:border-teal-500/30 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hospital-user text-xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-1">10+</h4>
+                        <p class="text-slate-400 text-sm">Years Medical Practice</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/40 hover:border-teal-500/30 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-doctor text-xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-1">2.5L+</h4>
+                        <p class="text-slate-400 text-sm">Lives Touched & Advised</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/40 hover:border-teal-500/30 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-medical text-xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-1">20+</h4>
+                        <p class="text-slate-400 text-sm">Clinical & Health Courses</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/40 hover:border-teal-500/30 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-1">98%</h4>
+                        <p class="text-slate-400 text-sm">Patient Satisfaction</p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Text & Intro Content -->
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                    <div class="inline-block">
+                        <span class="text-sm font-bold text-primary tracking-widest uppercase">My Profile</span>
+                        <div class="h-1 w-12 bg-primary mt-1 mx-auto lg:mx-0 rounded-full"></div>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">About Dr. Satyjeet Kumar</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Welcome to my official medical education and professional consulting hub! I am a fully qualified clinician with dual degrees in medicine (<strong>Bachelor of Medicine, Bachelor of Surgery - MBBS</strong>) and professional specialization (<strong>Doctor of Medicine - MD</strong>).
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        My primary mission is to break down complex clinical guidelines and medical paradigms into easy-to-understand, applicable workflows. Through <strong>Own Website</strong>, I author certified courses, deliver telemetry solutions, and offer direct consultation services aimed at enhancing primary healthcare delivery.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
+                        <div class="flex items-center space-x-3 justify-center lg:justify-start">
+                            <span class="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </span>
+                            <span class="text-slate-300 font-medium">Uttar Pradesh, India</span>
+                        </div>
+                        <div class="flex items-center space-x-3 justify-center lg:justify-start">
+                            <span class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-file-medical-badge"></i>
+                            </span>
+                            <span class="text-slate-300 font-medium">Registered Medical Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-[#0f172a] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-primary tracking-widest uppercase">Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Clinical & Educational Skills</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                <p class="text-slate-400">
+                    Combining rich medical knowledge, diagnosing capabilities, and online pedagogy to elevate student learning.
+                </p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-stethoscope text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Internal Medicine (MD)</h3>
+                        <p class="text-slate-400 text-sm mb-6">Expertise in diagnosing and treating adult physiological conditions, focusing on systemic diseases and patient care management.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-teal-400">95%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-teal-500 to-indigo-500 rounded-full" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hospital text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Clinical Diagnostics (MBBS)</h3>
+                        <p class="text-slate-400 text-sm mb-6">In-depth background in medical investigation, interpreting diagnostic reports, and identifying complex medical syndromes.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-blue-400">92%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-graduation-cap text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Medical Education</h3>
+                        <p class="text-slate-400 text-sm mb-6">Expert in tutoring medical entrance aspirants and professional college students in human physiology and pharmacological sciences.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-indigo-400">96%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" style="width: 96%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-medical text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Digital Health & Telemedicine</h3>
+                        <p class="text-slate-400 text-sm mb-6">Designing automated workflows, tele-consultation channels, and remote monitoring strategies via customized web platforms.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-emerald-400">88%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-medical text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Medical Writing</h3>
+                        <p class="text-slate-400 text-sm mb-6">Drafting peer-reviewed health blogs, research papers, and technical medical curriculum with strict adherence to WHO standards.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-cyan-400">90%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Patient Care & Counseling</h3>
+                        <p class="text-slate-400 text-sm mb-6">Offering detailed nutritional guidance, mental health wellness therapy, and direct diagnosis support to clinical outpatients.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-300">
+                            <span>proficiency</span>
+                            <span class="text-pink-400">98%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" style="width: 98%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Counter Section -->
+    <section id="achievements" class="py-24 bg-[#090d16] relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-secondary/5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-primary tracking-widest uppercase">Verified Stats</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Trust, Excellence & Healthcare Milestones</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Counter Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Active Students -->
+                <div class="p-8 rounded-2xl bg-slate-800/25 border border-slate-800/80 hover:border-slate-700 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400 mx-auto mb-6">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                    </div>
+                    <p class="text-4xl sm:text-5xl font-black text-white mb-2" id="counter-students" data-target="250000">0</p>
+                    <p class="text-lg font-bold text-slate-200">Active Students</p>
+                    <p class="text-slate-400 text-xs mt-1">Benefiting from online modules globally</p>
+                </div>
+
+                <!-- Online Courses -->
+                <div class="p-8 rounded-2xl bg-slate-800/25 border border-slate-800/80 hover:border-slate-700 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mx-auto mb-6">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <p class="text-4xl sm:text-5xl font-black text-white mb-2" id="counter-courses" data-target="20">0</p>
+                    <p class="text-lg font-bold text-slate-200">Online Courses</p>
+                    <p class="text-slate-400 text-xs mt-1">Structured medical and physiology paths</p>
+                </div>
+
+                <!-- Success Rate % -->
+                <div class="p-8 rounded-2xl bg-slate-800/25 border border-slate-800/80 hover:border-slate-700 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-6">
+                        <i class="fa-solid fa-percent text-2xl"></i>
+                    </div>
+                    <p class="text-4xl sm:text-5xl font-black text-white mb-2" id="counter-rate" data-target="95">0</p>
+                    <p class="text-lg font-bold text-slate-200">Success Rate %</p>
+                    <p class="text-slate-400 text-xs mt-1">Consistent exam success and accuracy</p>
+                </div>
+
+                <!-- Years Experience -->
+                <div class="p-8 rounded-2xl bg-slate-800/25 border border-slate-800/80 hover:border-slate-700 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400 mx-auto mb-6">
+                        <i class="fa-solid fa-award text-2xl"></i>
+                    </div>
+                    <p class="text-4xl sm:text-5xl font-black text-white mb-2" id="counter-years" data-target="10">0</p>
+                    <p class="text-lg font-bold text-slate-200">Years Practice</p>
+                    <p class="text-slate-400 text-xs mt-1">Continuous clinical dedication</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Course Finder / Showcase -->
+    <section id="courses" class="py-24 bg-[#0f172a] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-primary tracking-widest uppercase">Educational Cohorts</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Medical Programs</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                <p class="text-slate-400">Highly curated educational pathways built to expand physiological and clinical understanding.</p>
+            </div>
+
+            <!-- Program Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-slate-800/30 rounded-3xl border border-slate-700/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-semibold">Pre-Medical Core</span>
+                            <span class="text-xs text-slate-400">Duration: 3 Months</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fundamental Human Anatomy</h3>
+                        <p class="text-slate-400 text-sm mb-4">A complete, entry-level walkthrough of vital organ systems, standard physiological operations, and foundational medical nomenclature.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Cardiovascular & Respiratory Systems</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Gastrointestinal & Renal Function</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Basic Cytology and Tissue Matrix</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-slate-400 text-xs">Certified Program</span>
+                        <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition-colors">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-slate-800/30 rounded-3xl border border-slate-700/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold">Clinical Pathway</span>
+                            <span class="text-xs text-slate-400">Duration: 6 Months</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Introduction to Clinical Medicine</h3>
+                        <p class="text-slate-400 text-sm mb-4">Deep dive into clinical symptom evaluation, vital signs screening, basic pharmacological prescriptions, and internal medicine concepts.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Diagnostic Testing Interpretation</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Pharmacology & Basic Drug Action</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Pathology of Chronic Health Illness</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-slate-400 text-xs">Doctor-Guided</span>
+                        <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition-colors">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-slate-800/30 rounded-3xl border border-slate-700/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold">Public Health</span>
+                            <span class="text-xs text-slate-400">Duration: 4 Months</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Emergency First Aid & Life Support</h3>
+                        <p class="text-slate-400 text-sm mb-4">Equipping healthcare enthusiasts with necessary safety tools. Practical steps on managing urgent medical incidents and stabilizing patients.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Basic Life Support & CPR Standards</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Wound Dressing & Immobilization Tech</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Urgent Poisoning & Allergy Protocols</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-slate-400 text-xs">Global Standard</span>
+                        <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition-colors">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-[#090d16] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-primary tracking-widest uppercase">Student & Patient Reviews</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">What Our Learners Say</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="p-8 rounded-2xl bg-slate-800/20 border border-slate-800/85 hover:border-slate-700/80 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"Dr. Satyjeet Sir's medical lectures on Own Website are exceptionally descriptive. He made the complex cardiovascular diagnostics extremely clear. His guides gave my clinical exams a great head start."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xs">
+                            KM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Kaushal Mishra</h4>
+                            <p class="text-slate-400 text-xs">Medical Intern (Alumnus)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-8 rounded-2xl bg-slate-800/20 border border-slate-800/85 hover:border-slate-700/80 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"I learned emergency clinical support skills from his structured telemetry lectures. The detailed checklists and case-based assessments enabled me to work confidently inside clinical setups."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xs">
+                            SK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Shalini Kumari</h4>
+                            <p class="text-slate-400 text-xs">Clinical Assistant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-8 rounded-2xl bg-slate-800/20 border border-slate-800/85 hover:border-slate-700/80 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"If you want to understand professional pharmacology and human anatomy without stress, Dr. Satyjeet Kumar is the absolute best mentor. His qualification shows in his premium teaching standard."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xs">
+                            RS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Rohit Singh</h4>
+                            <p class="text-slate-400 text-xs">Pre-Med Aspirant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="py-24 bg-[#0f172a] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-primary tracking-widest uppercase">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Contact Me</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                <p class="text-slate-400">Have a health concern, medical counseling query, or want to join a batch? Reach out!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-white">Own Website Clinical Hub</h3>
+                        <p class="text-slate-400">A leading medical counseling & professional training portal directed by Dr. Satyjeet Kumar to ensure deep medical understanding.</p>
+                    </div>
+
+                    <!-- Contact Details Lists -->
+                    <div class="space-y-6 my-8">
+                        <!-- Location -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Practice Location</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <i class="fa-solid fa-phone-volume text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Phone & Consultation Support</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 flex-shrink-0">
+                                <i class="fa-solid fa-envelope-open-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Official Clinical Email</h4>
+                                <p class="text-slate-400 text-sm mt-0.5">contact@ownwebsite.edu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="pt-6 border-t border-slate-800">
+                        <p class="text-sm text-slate-400 mb-4">Follow us on Social Networks:</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-teal-500 transition-colors flex items-center justify-center text-slate-300 hover:text-white" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-rose-600 transition-colors flex items-center justify-center text-slate-300 hover:text-white" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-sky-500 transition-colors flex items-center justify-center text-slate-300 hover:text-white" aria-label="Telegram">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-indigo-600 transition-colors flex items-center justify-center text-slate-300 hover:text-white" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-[#131b2e] rounded-3xl p-6 sm:p-10 border border-slate-800/80 shadow-xl relative">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="form-name" class="text-sm font-semibold text-slate-300">Your Name</label>
+                                <input type="text" id="form-name" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 focus:border-teal-500 focus:outline-none rounded-xl text-slate-200 text-sm transition-colors" placeholder="e.g. Rahul Kumar">
+                            </div>
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="form-email" class="text-sm font-semibold text-slate-300">Email Address</label>
+                                <input type="email" id="form-email" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 focus:border-teal-500 focus:outline-none rounded-xl text-slate-200 text-sm transition-colors" placeholder="e.g. rahul@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Mobile -->
+                            <div class="space-y-2">
+                                <label for="form-phone" class="text-sm font-semibold text-slate-300">Contact Number</label>
+                                <input type="tel" id="form-phone" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 focus:border-teal-500 focus:outline-none rounded-xl text-slate-200 text-sm transition-colors" placeholder="e.g. +91 99999 99999">
+                            </div>
+                            <!-- Course interested -->
+                            <div class="space-y-2">
+                                <label for="form-interest" class="text-sm font-semibold text-slate-300">Select Interest</label>
+                                <select id="form-interest" class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 focus:border-teal-500 focus:outline-none rounded-xl text-slate-300 text-sm transition-colors">
+                                    <option value="Medical Admission Prep">Pre-Medical Entrance Coaching</option>
+                                    <option value="Internal Medicine Core">Clinical & Pathology Course</option>
+                                    <option value="First Aid Certification">CPR & First Aid Life Support</option>
+                                    <option value="Telehealth Consultation">Healthcare Consultation Query</option>
+                                    <option value="General Query">General Enquiry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="space-y-2">
+                            <label for="form-message" class="text-sm font-semibold text-slate-300">Your Inquiry / Concern</label>
+                            <textarea id="form-message" rows="4" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 focus:border-teal-500 focus:outline-none rounded-xl text-slate-200 text-sm transition-colors resize-none" placeholder="Write your clinical query or health education question here..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:opacity-95 transition-opacity shadow-lg shadow-teal-500/20 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            <span>Submit Request</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#0b0f19] border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-base">
+                    O
+                </div>
+                <span class="text-lg font-extrabold tracking-wider text-white">Own Website</span>
+            </div>
+            
+            <p class="text-slate-500 text-sm max-w-xl mx-auto">
+                Promoting professional medical diagnostics, healthcare pedagogy, and direct primary telehealth solutions under strict ethical guidelines.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#achievements" class="hover:text-white transition-colors">Achievements</a>
+                <a href="#courses" class="hover:text-white transition-colors">Courses</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <p class="text-slate-600 text-xs pt-4 border-t border-slate-900">
+                &copy; 2026 Own Website Medical Studies. All Rights Reserved. Designed for Dr. Satyjeet Kumar (MBBS, MD).
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom Pop-up Modal (Success Notification) -->
+    <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 hidden">
+        <div class="bg-[#131b2e] border border-slate-800 max-w-md w-full rounded-3xl p-8 text-center space-y-6 shadow-2xl relative">
+            <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h3 class="text-2xl font-bold text-white">Inquiry Submitted Successfully!</h3>
+                <p class="text-slate-400 text-sm">Thank you, <span id="modal-user-name" class="text-teal-400 font-semibold">Guest</span>. Dr. Satyjeet Kumar's medical desk or the consultation administration team will contact you shortly via email or phone support.</p>
+            </div>
+
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 font-bold text-slate-200 transition-colors">
+                Okay, Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions Logic -->
+    <script>
+        // 1. Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                // Change to close icon
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                // Change to hamburger icon
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+
+        // Close menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+
+        // 2. Dynamic Scroll Nav Active Design
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-[#0f172a]', 'shadow-lg');
+                header.classList.remove('bg-[#0f172a]/90');
+            } else {
+                header.classList.add('bg-[#0f172a]/90');
+                header.classList.remove('bg-[#0f172a]', 'shadow-lg');
+            }
+        });
+
+        // 3. Animated Achievement Counter On Scroll Intersection
+        const counterIds = ['counter-students', 'counter-courses', 'counter-rate', 'counter-years'];
+        let countersStarted = false;
+
+        const startCounters = () => {
+            counterIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (!element) return;
+                const target = parseInt(element.getAttribute('data-target'));
+                let current = 0;
+                
+                // Determine increment speed base on target size
+                const speed = target > 1000 ? Math.ceil(target / 100) : 1;
+                const timer = setInterval(() => {
+                    current += speed;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    // Format output
+                    if (target >= 1000) {
+                        element.textContent = current.toLocaleString('en-IN') + "+";
+                    } else if (id === 'counter-rate') {
+                        element.textContent = current + "%";
+                    } else {
+                        element.textContent = current + "+";
+                    }
+                }, 15);
+            });
+        };
+
+        // Trigger Counter Animation when visible on screen
+        const achievementsSection = document.getElementById('achievements');
+        if (achievementsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersStarted) {
+                        countersStarted = true;
+                        startCounters();
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(achievementsSection);
+        }
+
+        // 4. Contact Form Validation and Success Modal Pop-up
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const modalUserName = document.getElementById('modal-user-name');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('form-name').value.trim();
+            const emailInput = document.getElementById('form-email').value.trim();
+            const phoneInput = document.getElementById('form-phone').value.trim();
+            const messageInput = document.getElementById('form-message').value.trim();
+
+            if (nameInput && emailInput && phoneInput && messageInput) {
+                // Set name on success modal
+                modalUserName.textContent = nameInput;
+                // Display custom premium modal
+                successModal.classList.remove('hidden');
+                // Reset form values safely
+                contactForm.reset();
+            }
+        });
+
+        // Modal Close function
+        function closeModal() {
+            successModal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
